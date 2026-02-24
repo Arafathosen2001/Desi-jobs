@@ -51,7 +51,8 @@ function toggle(buttonId) {
         jobCount.classList.remove('hidden');
         jobCountInterview.classList.add('hidden');
         jobCountRejected.classList.add('hidden');
-        
+        filterInterview();
+        filterRejected();
         
     } else if(buttonId === 'interview-btn'){
         interviewBtn.classList.add('btn-primary');
@@ -98,6 +99,7 @@ document.addEventListener('click', function (event) {
         statusBtn.innerText = 'Interview';
         statusBtn.classList.add('bg-green-500');
         statusBtn.classList.remove('bg-red-500');
+        statusBtn.classList.remove('hidden');
 
 
         const FindInterview = interview.find(job => job.companyName === companyName);
@@ -117,6 +119,7 @@ document.addEventListener('click', function (event) {
         statusBtn.innerText = 'Rejected';
         statusBtn.classList.add('bg-red-500');
         statusBtn.classList.remove('bg-green-500'); 
+        statusBtn.classList.remove('hidden');
 
         
         if (!rejected.find(job => job.companyName === companyName)) {
@@ -130,7 +133,9 @@ document.addEventListener('click', function (event) {
         filterInterview();
         filterRejected();
     }
-
+    if (event.target.classList.contains('interview-btn-card')) {
+        
+    }
   
     if (event.target.closest('#delete-btn')) {
 
@@ -169,7 +174,7 @@ function filterInterview() {
                 <p class="job-condition text-[#323B49] pb-4 pt-2">${job.jobCondition}</p>
                 <button class="btn btn-outline btn-error rejected-btn-card">Rejected</button>
             </div>
-            <button id="delete-btn" class="btn btn-circle delete-btn">🗑</button>
+            <button id="delete-bt" class="btn btn-circle delete-btn">🗑</button>
         `;
         container.appendChild(card);
     }
@@ -203,7 +208,7 @@ function filterRejected() {
                 <button class="btn btn-outline btn-accent interview-btn-card">Interview</button>
             </div>
 
-            <button id="delete-btn" class="btn btn-circle delete-btn">🗑</button>
+            <button id="delete-bt" class="btn btn-circle delete-btn">🗑</button>
         `;
 
         container.appendChild(card);
