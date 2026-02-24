@@ -133,9 +133,7 @@ document.addEventListener('click', function (event) {
         filterInterview();
         filterRejected();
     }
-    if (event.target.classList.contains('interview-btn-card')) {
-        
-    }
+  
   
     if (event.target.closest('#delete-btn')) {
 
