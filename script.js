@@ -116,11 +116,9 @@ document.addEventListener('click', function (event) {
      const cardParemt = card.parentNode;
     if (event.target.classList.contains('delete-btn')) {
         // console.log(cardParemt)
-        console.log('ggg')
+        // console.log('ggg')
         cardParemt.removeChild(card)
         updateCounts();
-         filterInterview();
-        filterRejected();
     }
 
     if (event.target.classList.contains('interview-btn-card')) {
