@@ -43,7 +43,10 @@ function switchTab(tab) {
         jobCountInterview.classList.add('hidden')
         jobCountRejected.classList.add('hidden')
 
-        
+        if (allSection.children.length === 0) {
+                    // console.log('interviewSection oooooo')
+                    noJobs.classList.remove('hidden')
+        }
  
         
     }
