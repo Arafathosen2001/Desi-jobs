@@ -115,7 +115,7 @@ document.addEventListener('click', function (event) {
     const statusBtn = card.querySelector('.statusb');
      const cardParemt = card.parentNode;
     if (event.target.classList.contains('delete-btn')) {
-        // console.log(cardParemt)
+        console.log(cardParemt)
         // console.log('ggg')
         cardParemt.removeChild(card)
         updateCounts();
@@ -128,7 +128,7 @@ document.addEventListener('click', function (event) {
         statusBtn.classList.remove('bg-red-500');
         statusBtn.classList.remove('hidden');
 
-
+        
         const FindInterview = interview.find(job => job.companyName === companyName);
         if (!FindInterview) {
             interview.push(jobData);
